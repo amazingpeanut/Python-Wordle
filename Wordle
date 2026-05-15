@@ -22,7 +22,7 @@ def load_answers(file_name="answers.txt"):
     except FileNotFoundError:
         print(f"Error: Make sure you created a tab named 'answers.txt'")
         return set()
-valid_answers = load_answers
+valid_answers = load_answers()
 
 class colors:
     RED = '\033[31m'
@@ -31,7 +31,7 @@ class colors:
     YELLOW = '\033[33m'
 import random
 
-wordchoice = random.randint(0,14855)
+wordchoice = random.randint(1,2315)
 answers = list(valid_answers)
 word = answers[wordchoice]
 
