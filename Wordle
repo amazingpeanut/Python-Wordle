@@ -1,0 +1,185 @@
+import sys
+
+class colors:
+    RED = '\033[31m'
+    ENDC = '\033[m'
+    GREEN = '\033[32m'
+    YELLOW = '\033[33m'
+import random
+wordlist = ["trung", "shrek"]
+wordchoice = random.randint(0,1)
+word = wordlist[wordchoice]
+
+status = [0,0,0,0,0]
+
+# You get six guesses
+print("Python Wordle")
+print("You get six guesses.")
+guess = input("Input your first guess (5 letters, all lowercase)")
+if not len(guess) == 5:
+    guess = input("Please make sure your guess is 5 letters long.")
+if not len(guess) == 5:
+    sys.exit("Your guess must be 5 letters long. Terminating game because you might be a bot.")
+
+
+
+for i in range(5):
+    if guess[i] == word[i]:
+        status[i] = 2
+    elif guess[i] in word:
+        status[i] = 1
+    else:
+        status[i] = 0
+    
+        
+for i in range(5):
+    if status[i] == 2:
+        print(colors.GREEN + guess[i] + colors.ENDC)
+    if status[i] == 1:
+        print(colors.YELLOW + guess[i] + colors.ENDC)
+    if status[i] == 0:
+        print(colors.RED + guess[i] + colors.ENDC)
+        
+if status == [2,2,2,2,2]:
+    sys.exit("You guessed the word! Ending program.")
+        
+guess2 = input("Input your second guess (5 letters, all lowercase)")
+if not len(guess2) == 5:
+    guess2 = input("Please make sure your guess is 5 letters long.")
+if not len(guess2) == 5:
+    sys.exit("Your guess must be 5 letters long. Terminating game because you might be a bot.")
+
+
+for i in range(5):
+    if guess2[i] == word[i]:
+        status[i] = 2
+    elif guess2[i] in word:
+        status[i] = 1
+    else:
+        status[i] = 0
+    
+        
+for i in range(5):
+    if status[i] == 2:
+        print(colors.GREEN + guess2[i] + colors.ENDC)
+    if status[i] == 1:
+        print(colors.YELLOW + guess2[i] + colors.ENDC)
+    if status[i] == 0:
+        print(colors.RED + guess2[i] + colors.ENDC)
+        
+if status == [2,2,2,2,2]:
+    sys.exit("You guessed the word! Ending program.")
+        
+guess3 = input("Input your third guess (5 letters, all lowercase)")
+if not len(guess3) == 5:
+    guess3 = input("Please make sure your guess is 5 letters long.")
+if not len(guess3) == 5:
+    sys.exit("Your guess must be 5 letters long. Terminating game because you might be a bot.")
+
+
+for i in range(5):
+    if guess3[i] == word[i]:
+        status[i] = 2
+    elif guess3[i] in word:
+        status[i] = 1
+    else:
+        status[i] = 0
+    
+        
+for i in range(5):
+    if status[i] == 2:
+        print(colors.GREEN + guess3[i] + colors.ENDC)
+    if status[i] == 1:
+        print(colors.YELLOW + guess3[i] + colors.ENDC)
+    if status[i] == 0:
+        print(colors.RED + guess3[i] + colors.ENDC)
+        
+if status == [2,2,2,2,2]:
+    sys.exit("You guessed the word! Ending program.")
+        
+guess4 = input("Input your fourth guess (5 letters, all lowercase)")
+if not len(guess4) == 5:
+    guess4 = input("Please make sure your guess is 5 letters long.")
+if not len(guess4) == 5:
+    sys.exit("Your guess must be 5 letters long. Terminating game because you might be a bot.")
+
+
+for i in range(5):
+    if guess4[i] == word[i]:
+        status[i] = 2
+    elif guess4[i] in word:
+        status[i] = 1
+    else:
+        status[i] = 0
+    
+        
+for i in range(5):
+    if status[i] == 2:
+        print(colors.GREEN + guess4[i] + colors.ENDC)
+    if status[i] == 1:
+        print(colors.YELLOW + guess4[i] + colors.ENDC)
+    if status[i] == 0:
+        print(colors.RED + guess4[i] + colors.ENDC)
+        
+if status == [2,2,2,2,2]:
+    sys.exit("You guessed the word! Ending program.")
+    
+guess5 = input("Input your fifth guess (5 letters, all lowercase)")
+if not len(guess5) == 5:
+    guess5 = input("Please make sure your guess is 5 letters long.")
+if not len(guess5) == 5:
+    sys.exit("Your guess must be 5 letters long. Terminating game because you might be a bot.")
+
+
+for i in range(5):
+    if guess5[i] == word[i]:
+        status[i] = 2
+    elif guess5[i] in word:
+        status[i] = 1
+    else:
+        status[i] = 0
+    
+        
+for i in range(5):
+    if status[i] == 2:
+        print(colors.GREEN + guess5[i] + colors.ENDC)
+    if status[i] == 1:
+        print(colors.YELLOW + guess5[i] + colors.ENDC)
+    if status[i] == 0:
+        print(colors.RED + guess5[i] + colors.ENDC)
+if status == [2,2,2,2,2]:
+    sys.exit("You guessed the word! Ending program.")
+        
+guess6 = input("Input your last guess (5 letters, all lowercase)")
+if not len(guess6) == 5:
+    guess6 = input("Please make sure your guess is 5 letters long.")
+if not len(guess6) == 5:
+    sys.exit("Your guess must be 5 letters long. Terminating game because you might be a bot.")
+
+
+for i in range(5):
+    if guess6[i] == word[i]:
+        status[i] = 2
+    elif guess6[i] in word:
+        status[i] = 1
+    else:
+        status[i] = 0
+    
+        
+for i in range(5):
+    if status[i] == 2:
+        print(colors.GREEN + guess6[i] + colors.ENDC)
+    if status[i] == 1:
+        print(colors.YELLOW + guess6[i] + colors.ENDC)
+    if status[i] == 0:
+        print(colors.RED + guess6[i] + colors.ENDC)
+if status == [2,2,2,2,2]:
+    sys.exit("You guessed the word! Ending program.")
+else:
+    sys.exit("Too bad! You didn't guess the word. The word was " + word)
+
+
+
+
+
+
