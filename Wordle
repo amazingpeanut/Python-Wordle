@@ -1,14 +1,28 @@
 import sys
 
+def load_words(file_name="words.txt"):
+    try:
+        # OnlineGDB looks for the file in the exact same tab panel
+        with open(file_name, "r") as file:
+            # Reads lines, removes hidden spacing, and creates a fast lookup set
+            return set(line.strip().lower() for line in file)
+    except FileNotFoundError:
+        print(f"Error: Make sure you created a tab named 'words.txt'")
+        return set()
+
+# 1. Load the words into memory
+valid_words = load_words()
+
 class colors:
     RED = '\033[31m'
     ENDC = '\033[m'
     GREEN = '\033[32m'
     YELLOW = '\033[33m'
 import random
-wordlist = ["trung", "shrek"]
-wordchoice = random.randint(0,1)
-word = wordlist[wordchoice]
+
+wordchoice = random.randint(0,14855)
+answers = list(valid_words)
+word = answers[wordchoice]
 
 status = [0,0,0,0,0]
 
@@ -16,10 +30,10 @@ status = [0,0,0,0,0]
 print("Python Wordle")
 print("You get six guesses.")
 guess = input("Input your first guess (5 letters, all lowercase)")
-if not len(guess) == 5:
-    guess = input("Please make sure your guess is 5 letters long.")
-if not len(guess) == 5:
-    sys.exit("Your guess must be 5 letters long. Terminating game because you might be a bot.")
+if not len(guess) == 5 or not guess in valid_words:
+    guess = input("Please make sure your guess is 5 letters long and exists.")
+if not len(guess) == 5 or not guess in valid_words:
+    sys.exit("Your guess must be 5 letters long and exist. Terminating game because you might be a bot.")
 
 
 
@@ -44,10 +58,10 @@ if status == [2,2,2,2,2]:
     sys.exit("You guessed the word! Ending program.")
         
 guess2 = input("Input your second guess (5 letters, all lowercase)")
-if not len(guess2) == 5:
-    guess2 = input("Please make sure your guess is 5 letters long.")
-if not len(guess2) == 5:
-    sys.exit("Your guess must be 5 letters long. Terminating game because you might be a bot.")
+if not len(guess2) == 5 or not guess in valid_words:
+    guess = input("Please make sure your guess is 5 letters long and exists.")
+if not len(guess2) == 5 or not guess in valid_words:
+    sys.exit("Your guess must be 5 letters long and exist. Terminating game because you might be a bot.")
 
 
 for i in range(5):
@@ -71,10 +85,10 @@ if status == [2,2,2,2,2]:
     sys.exit("You guessed the word! Ending program.")
         
 guess3 = input("Input your third guess (5 letters, all lowercase)")
-if not len(guess3) == 5:
-    guess3 = input("Please make sure your guess is 5 letters long.")
-if not len(guess3) == 5:
-    sys.exit("Your guess must be 5 letters long. Terminating game because you might be a bot.")
+if not len(guess3) == 5 or not guess in valid_words:
+    guess = input("Please make sure your guess is 5 letters long and exists.")
+if not len(guess3) == 5 or not guess in valid_words:
+    sys.exit("Your guess must be 5 letters long and exist. Terminating game because you might be a bot.")
 
 
 for i in range(5):
@@ -98,10 +112,10 @@ if status == [2,2,2,2,2]:
     sys.exit("You guessed the word! Ending program.")
         
 guess4 = input("Input your fourth guess (5 letters, all lowercase)")
-if not len(guess4) == 5:
-    guess4 = input("Please make sure your guess is 5 letters long.")
-if not len(guess4) == 5:
-    sys.exit("Your guess must be 5 letters long. Terminating game because you might be a bot.")
+if not len(guess4) == 5 or not guess in valid_words:
+    guess = input("Please make sure your guess is 5 letters long and exists.")
+if not len(guess4) == 5 or not guess in valid_words:
+    sys.exit("Your guess must be 5 letters long and exist. Terminating game because you might be a bot.")
 
 
 for i in range(5):
@@ -125,10 +139,10 @@ if status == [2,2,2,2,2]:
     sys.exit("You guessed the word! Ending program.")
     
 guess5 = input("Input your fifth guess (5 letters, all lowercase)")
-if not len(guess5) == 5:
-    guess5 = input("Please make sure your guess is 5 letters long.")
-if not len(guess5) == 5:
-    sys.exit("Your guess must be 5 letters long. Terminating game because you might be a bot.")
+if not len(guess5) == 5 or not guess in valid_words:
+    guess = input("Please make sure your guess is 5 letters long and exists.")
+if not len(guess5) == 5 or not guess in valid_words:
+    sys.exit("Your guess must be 5 letters long and exist. Terminating game because you might be a bot.")
 
 
 for i in range(5):
@@ -151,10 +165,10 @@ if status == [2,2,2,2,2]:
     sys.exit("You guessed the word! Ending program.")
         
 guess6 = input("Input your last guess (5 letters, all lowercase)")
-if not len(guess6) == 5:
-    guess6 = input("Please make sure your guess is 5 letters long.")
-if not len(guess6) == 5:
-    sys.exit("Your guess must be 5 letters long. Terminating game because you might be a bot.")
+if not len(guess6) == 5 or not guess in valid_words:
+    guess = input("Please make sure your guess is 5 letters long and exists.")
+if not len(guess6) == 5 or not guess in valid_words:
+    sys.exit("Your guess must be 5 letters long and exist. Terminating game because you might be a bot.")
 
 
 for i in range(5):
@@ -177,9 +191,3 @@ if status == [2,2,2,2,2]:
     sys.exit("You guessed the word! Ending program.")
 else:
     sys.exit("Too bad! You didn't guess the word. The word was " + word)
-
-
-
-
-
-
