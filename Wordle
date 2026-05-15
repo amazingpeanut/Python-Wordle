@@ -13,6 +13,17 @@ def load_words(file_name="words.txt"):
 # 1. Load the words into memory
 valid_words = load_words()
 
+def load_answers(file_name="answers.txt"):
+    try:
+        # OnlineGDB looks for the file in the exact same tab panel
+        with open(file_name, "r") as file:
+            # Reads lines, removes hidden spacing, and creates a fast lookup set
+            return set(line.strip().lower() for line in file)
+    except FileNotFoundError:
+        print(f"Error: Make sure you created a tab named 'answers.txt'")
+        return set()
+valid_answers = load_answers
+
 class colors:
     RED = '\033[31m'
     ENDC = '\033[m'
@@ -21,7 +32,7 @@ class colors:
 import random
 
 wordchoice = random.randint(0,14855)
-answers = list(valid_words)
+answers = list(valid_answers)
 word = answers[wordchoice]
 
 status = [0,0,0,0,0]
